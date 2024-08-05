@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balık Tarayıcı</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+        .logo {
+            margin-top: 100px;
+        }
+        .search-container {
+            margin-top: 20px;
+        }
+        .search-box {
+            width: 500px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 24px;
+            outline: none;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .buttons input {
+            padding: 10px 20px;
+            margin: 0 5px;
+            border: none;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .buttons input:hover {
+            background-color: #e8e8e8;
+        }
+        .header {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .header a {
+            margin-left: 20px;
+            color: #1a0dab;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .header a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="https://www.google.com/imghp">Images</a>
+    </div>
+    <img class="logo" src="https://pnghq.com/wp-content/uploads/pnghq.com-fish-png-free-images-with-transparent-background.png" alt="Google Logo" style="width:128px;height:128px;">
+    <div class="search-container">
+        <form action="https://www.google.com/search" method="GET">
+            <input type="text" name="q" class="search-box" placeholder="Balık'da Ara">
+            <div class="buttons">
+                <input type="submit" value="Balık'da Ara">
+                <input type="button" value="Kendimi Şanslı Hissediyorum" onclick="luckySearch()">
+            </div>
+        </form>
+    </div>
+    <script>
+        function luckySearch() {
+            const query = document.querySelector('.search-box').value;
+            if (query) {
+                window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}&btnI=1`;
+            }
+        }
+    </script>
+</body>
+</html>
